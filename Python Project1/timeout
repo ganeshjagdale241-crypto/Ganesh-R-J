@@ -1,4 +1,4 @@
-#update server configuration file when maximum connection reached 200.
+#update server configuration file for timeout.
 
 def update_server_config(file_path, time, timeoutvalue):
     with open(file_path, "r") as file:
