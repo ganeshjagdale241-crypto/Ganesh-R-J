@@ -1,1 +1,14 @@
+#update server configuration file when maximum connection reached 200.
 
+def update_server_config(file_path, time, timeoutvalue):
+    with open(file_path, "r") as file:
+       lines = file.readlines()
+    
+    with open(file_path, "w") as file:
+        for line in lines:
+            if time in line:
+                file.write(time + "=" + timeoutvalue + "\n") 
+            else:
+                file.write(line)
+
+update_server_config("server.conf", "TIMEOUT", "4000")
